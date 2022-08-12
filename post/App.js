@@ -1,14 +1,16 @@
 import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import RootStack from './screens/RootStack';
+import LogContext from './contexts/LogContext';
 
-const App = () => {
+function App() {
   return (
-    <SafeAreaView>
-    <View>
-      <Text>Hello React!</Text>
-    </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <LogContext.Provider value="안녕하세요">
+      <RootStack />
+    </LogContext.Provider>
+    </NavigationContainer>
   );
-};
+}
 
 export default App;
